@@ -1,0 +1,170 @@
+/* Add the web font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* Use the web font for all text */
+body {
+   font-family: "Montserrat", sans-serif;
+   background-color: #f1f1f1;
+   color: #333;
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+}
+
+/* Add bold styling to headings */
+h1,
+h2,
+h3 {
+   font-weight: 700;
+}
+
+/* Add bold styling to buttons */
+button {
+   font-weight: 700;
+}
+
+/* Add padding to the to-do container */
+.todo-container {
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
+   padding: 20px;
+}
+
+#todo-input {
+   width: 60%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border: 2px solid;
+   border-color: #333;
+   border-radius: 4px;
+   font-size: 16px;
+}
+
+#add-button {
+   width: 20%;
+   background-color: #4caf50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+#add-button:hover {
+   background-color: #3e8e41;
+}
+#todo-list {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.todo {
+   flex-basis: 100%;
+   margin-bottom: 10px;
+   background-color: #f9f9f9;
+   padding: 10px;
+   border-bottom: 1px solid #ccc;
+   text-align: left;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   border-radius: 10px;
+   margin-bottom: 10px;
+   position: relative;
+}
+
+/* Add a border to the to-do items */
+.todo::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 3px;
+   height: 100%;
+   background-color: #4caf50;
+   border-radius: 10px 0 0 10px;
+   transition: all 0.2s ease;
+}
+
+.todo.completed {
+   background-color: #aaa;
+   text-decoration: line-through;
+   opacity: 0.7;
+}
+
+/* Add a "delete" button for each to-do */
+.todo .delete-btn {
+   float: right;
+   font-size: 12px;
+   color: #aaa;
+   cursor: pointer;
+}
+
+.todo .delete-btn:hover {
+   color: #555;
+}
+
+#dark-mode-btn {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   padding: 8px 12px;
+   background-color: #444;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+#dark-mode-btn:hover {
+   background-color: #333;
+}
+
+/* Add styles for dark mode */
+.dark-mode {
+   background-color: #333;
+   color: #fff;
+   transition: background-color 0.5s ease;
+}
+.dark-mode .todo {
+  border-color: #fff;
+   color: rgb(0, 0, 0);
+}
+.dark-mode .todo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #2196F3;
+  border-radius: 10px 0 0 10px;
+  transition: all 0.2s ease;
+}
+.dark-mode #todo-input {
+   color: rgb(0, 0, 0);
+   border-color: #fff;
+}
+.dark-mode #add-button {
+  background-color: #2196F3;
+}
+
+.dark-mode #add-button:hover {
+  background-color: #1E88E5;
+}
+
+@media (max-width: 600px) {
+   .todo-container {
+      width: 90%;
+   }
+}
+/* Use media queries to change the flex-basis of the to-do items on small screens */
+@media (max-width: 600px) {
+   .todo {
+      flex-basis: 50%;
+   }
+}
